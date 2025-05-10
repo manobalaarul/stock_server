@@ -14,6 +14,7 @@ import inStockRouter from "./router/instock.router.js";
 import orderRouter from "./router/order.router.js";
 import outStockRouter from "./router/outstock.router.js";
 import profileRouter from "./router/profile.router.js";
+import dashboardRouter from "./router/dashboard.router.js";
 
 dotenv.config();
 const app = express();
@@ -51,6 +52,7 @@ app.use("/api/stock", inStockRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/outstock", outStockRouter);
 app.use("/api/profile", profileRouter);
+app.use("/api/dashboard", dashboardRouter);
 
 connectDB().then(() => {
   app.listen(PORT, () => {
